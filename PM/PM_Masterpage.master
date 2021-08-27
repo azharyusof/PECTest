@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PM_Masterpage.master.cs" Inherits="PM_Masterpage" %>
+
+<!DOCTYPE html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Project Execution Control (DEV v1.1)</title>
+    <link rel="icon" type="image/png" href="Img/uem_only.png"/>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="formMaster" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    <Scripts>
+        <asp:ScriptReference Path="Scripts/jquery-2.2.3.min.js" />
+        <asp:ScriptReference Path="Scripts/moment.js" />
+        <asp:ScriptReference Path="Scripts/bootstrap.min.js" />
+        <asp:ScriptReference Path="Scripts/bootstrap-datetimepicker.min.js" />
+        <asp:ScriptReference Path="Scripts/zebra_datepicker.src.js" />
+        <asp:ScriptReference Path="Scripts/confDate.js" />
+    </Scripts>
+    </asp:ScriptManager>
+
+    <div class="container">
+        <div class="row">
+            <img src="Img/PECbanner.png" class="img-responsive"/>
+        </div>
+    </div>
+    <div class="container">
+    <div class="row">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile  display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    <li ID="vwAdmin1" runat="server"><a href="ProjectListing.aspx"><img src="Img/Icon/copy.png" /><b> Main</b></a></li>
+                    <li ID="vwAdmin6" runat="server"><a href="ProjectListingFin.aspx"><img src="Img/Icon/copy.png" /><b> Finance Code</b></a></li>
+                    <li ID="vwAdmin4" runat="server"><a href="ProjectDatabase.aspx"><img src="Img/Icon/copy.png" /><b> Project Database</b></a></li>
+                    <li ID="vwAdmin7" runat="server"><a href="ProjectApproval.aspx"><img src="Img/Icon/copy.png" /><b> Approval List</b></a></li>
+                    <li ID="vwAdmin5" runat="server"><a href="OutOfOffice.aspx"><img src="Img/Icon/copy.png" /><b> Out Of Office</b></a></li>
+                    <li ID="vwAdmin2" runat="server"><a href="Report.aspx"><img src="Img/Icon/Magnifier.png" /><b> Report</b></a></li>
+                    <li class="dropdown" runat="server" id="vwAdmin3">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="Img/Icon/Copy.png" /> <b>Administrator Module</b> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li ID="vwAdmin3a" runat="server"><a href="Admin_Client.aspx"><img src="Img/Icon/Copy.png" /><b> Client</b></a></li>                            
+                            <li ID="vwAdmin3b" runat="server"><a href="Admin_Company.aspx"><img src="Img/Icon/Copy.png" /><b> Operating Company</b></a></li>
+                            <li ID="vwAdmin3c" runat="server"><a href="Admin_Unit.aspx"><img src="Img/Icon/Copy.png" /><b> Operating Unit</b></a></li>
+                            <li ID="vwAdmin3d" runat="server"><a href="Admin_ContractType.aspx"><img src="Img/Icon/Copy.png" /><b> Contract Type</b></a></li>
+                            <li ID="vwAdmin3e" runat="server"><a href="Admin_CRVOType.aspx"><img src="Img/Icon/Copy.png" /><b> Change Request / VO Type</b></a></li>
+                            <li ID="vwAdmin3f" runat="server"><a href="Admin_RiskCategory.aspx"><img src="Img/Icon/Copy.png" /><b> Risk Category</b></a></li>
+                            <li ID="vwAdmin3g" runat="server"><a href="Admin_Schedule.aspx"><img src="Img/Icon/Copy.png" /><b> Schedule</b></a></li>
+                            <li ID="vwAdmin3i" runat="server"><a href="Admin_RiskImpact.aspx"><img src="Img/Icon/Copy.png" /><b> Risk Impact</b></a></li>
+                            <li ID="vwAdmin3h" runat="server"><a href="Admin_UserRole.aspx"><img src="Img/Icon/Copy.png" /><b> User Role</b></a></li>
+
+                            <li ID="vwAdmin3j" runat="server"><a href="Admin_PIC_Opportunity.aspx"><img src="Img/Icon/Copy.png" /><b> Project Manager / Project Director / PIC </b></a></li>
+                            <li ID="vwAdmin3k" runat="server"><a href="Admin_Audit_Error_Log.aspx"><img src="Img/Icon/Copy.png" /><b> Audit & Error Log </b></a></li>
+                        </ul>
+                    </li>
+                    
+                    
+                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li runat="server" id="vwLogout"><a href="../Logout.aspx"><img src="Img/Icon/logout.png" /> <b> Logout</b></a></li>
+                </ul>     
+            </div>
+        </div>
+    </nav>
+    </div>
+    </div>
+
+    <div class="container-fluid">        
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+    </div>
+
+    
+
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td height="25" valign="middle" align="center">
+                <asp:Label ID="lblFooter" runat="server" class="control-label input-xxs" Text="Copyright © 2018 UEM Edgenta ICT. All Rights Reserved."></asp:Label>
+            </td>
+        </tr>
+    </table>
+
+    </form>
+
+
+
+</body>
+</html>
