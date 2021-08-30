@@ -21,11 +21,14 @@ public partial class ChangePassword : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        //IF PAGE VALID
         if (!Page.IsPostBack)
         {
+            //GET SESSION FOR USER ID
             fldUserID.Text = Session["UserID"].ToString();
             fldUserID.Enabled = false;
 
+            //INITIALIZE ERROR MESSAGE - SET AS FALSE VISIBLE
             errDvfldPass.Visible = false;
             errDvfldNewPass.Visible = false;
         }
@@ -37,6 +40,7 @@ public partial class ChangePassword : System.Web.UI.Page
 
         this.Refresh();
 
+        //CHECK IF fldPass NOT EMPTY
         if (fldPass.Text == "")
         {
             chckErr = false;
